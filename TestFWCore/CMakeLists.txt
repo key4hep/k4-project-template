@@ -21,5 +21,5 @@ include(CTest)
 
 gaudi_add_test(CreateExampleEventData
                WORKING_DIRECTORY ${PROJECT_SOURCE_DIR}
-               COMMAND gaudirun.py Test/TestFWCore/options/createExampleEventData.py  --filename=output_k4test_01.root)
+               COMMAND gaudirun.py TestFWCore/options/createExampleEventData.py)
 
