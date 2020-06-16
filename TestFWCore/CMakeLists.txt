@@ -23,3 +23,7 @@ gaudi_add_test(CreateExampleEventData
                WORKING_DIRECTORY ${PROJECT_SOURCE_DIR}
                COMMAND gaudirun.py TestFWCore/options/createExampleEventData.py)
 
+gaudi_add_test(ReadExampleEventData
+               WORKING_DIRECTORY ${PROJECT_SOURCE_DIR}
+               COMMAND gaudirun.py TestFWCore/options/readExampleEventData.py)
+
