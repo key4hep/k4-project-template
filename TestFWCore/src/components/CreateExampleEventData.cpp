@@ -40,6 +40,9 @@ StatusCode CreateExampleEventData::execute() {
   p4.z = m_magicNumberOffset + 7;
   particle.setMass(m_magicNumberOffset + 8);
 
+  auto* hits = m_simTrackerHitHandle.createAndPut();
+  auto hit = hits->create();
+  hit.setPosition({3, 4, 5});
 
 
   return StatusCode::SUCCESS;
