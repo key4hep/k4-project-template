@@ -11,9 +11,15 @@ This repository can be a starting point and template for projects using the Key4
 
 * PODIO
 
-* Gaudi
+* Gaudi   
 
 * k4FWCore
+
+Reference: Perhaps for some one trying to get started with the pig picture
+  - [https://iopscience.iop.org/article/10.1088/1742-6596/898/7/072039](https://iopscience.iop.org/article/10.1088/1742-6596/898/7/072039)
+  - [https://github.com/hegner/podio](https://github.com/hegner/podio)
+  - [lhcb-98-064 COMP](https://cds.cern.ch/record/691746/files/lhcb-98-064.pdf)
+  - [https://doi.org/10.1016/S0010-4655(01)00254-5](https://doi.org/10.1016/S0010-4655(01)00254-5)
 
 ## Installation
 
