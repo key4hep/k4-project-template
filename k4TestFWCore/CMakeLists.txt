@@ -27,3 +27,7 @@ gaudi_add_test(ReadExampleEventData
                WORKING_DIRECTORY ${PROJECT_SOURCE_DIR}
                COMMAND gaudirun.py k4TestFWCore/options/readExampleEventData.py)
 
+gaudi_add_test(HelloWorldAlg
+               WORKING_DIRECTORY ${PROJECT_SOURCE_DIR}
+               COMMAND gaudirun.py k4TestFWCore/options/createHelloWorld.py)
+
