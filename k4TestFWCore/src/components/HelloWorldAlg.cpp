@@ -1,6 +1,5 @@
-#include <iostream>
 #include "HelloWorldAlg.h"
-
+#include "GaudiKernel/MsgStream.h"
 
 DECLARE_COMPONENT(HelloWorldAlg)
 
@@ -10,19 +9,22 @@ HelloWorldAlg::HelloWorldAlg(const std::string& aName, ISvcLocator* aSvcLoc) : G
 HelloWorldAlg::~HelloWorldAlg() {}
 
 StatusCode HelloWorldAlg::initialize() {
-  message = message + "new thingy ?";
+  if (GaudiAlgorithm::initialize().isFailure()) {
+    return StatusCode::FAILURE;
+  }
+  message = message + "World";
   return StatusCode::SUCCESS;
 }
 
 StatusCode HelloWorldAlg::execute() {
-  std::cout << std::endl;
-  std::cout << std::endl;
-  std::cout << message << std::endl;
-  std::cout << std::endl;
-  std::cout << std::endl;
+  info() << endmsg;
+  info() << endmsg;
+  info() << message << endmsg;  
+  info() << endmsg;
+  info() << endmsg;
   return StatusCode::SUCCESS;
 }
 
 StatusCode HelloWorldAlg::finalize() {
-  return StatusCode::SUCCESS;
+  return GaudiAlgorithm::finalize(); 
 }

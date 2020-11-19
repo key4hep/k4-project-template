@@ -1,3 +1,6 @@
+#ifndef TESTFWCORE_HELLOWORLDALG
+#define TESTFWCORE_HELLOWORLDALG
+
 #pragma once 
 
 #include<string>
@@ -26,6 +29,7 @@ public:
 
 private:
   // member variable 
-  int m_member = 0; 
-  std::string message = "How can I say Hello, for this kinda ";
+  std::string message = "Hello ";
 };
+
+#endif /* TESTFWCORE_HELLOWORLDALG */
