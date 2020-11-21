@@ -3,8 +3,6 @@
 
 #pragma once 
 
-#include<string>
-
 // GAUDI
 #include "GaudiAlg/GaudiAlgorithm.h"
 #include "Gaudi/Property.h"
@@ -29,7 +27,7 @@ public:
 
 private:
   // member variable 
-  std::string message = "Hello ";
+  Gaudi::Property<std::string> theMessage{this, "PerEventPrintMessage", "Hello ", "The message to printed for each Event"};
 };
 
 #endif /* TESTFWCORE_HELLOWORLDALG */

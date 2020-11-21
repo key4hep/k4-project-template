@@ -4,6 +4,7 @@
 DECLARE_COMPONENT(HelloWorldAlg)
 
 HelloWorldAlg::HelloWorldAlg(const std::string& aName, ISvcLocator* aSvcLoc) : GaudiAlgorithm(aName, aSvcLoc) {
+  declareProperty("PerEventPrintMessage", theMessage, "The message to printed for each Event");
 }
 
 HelloWorldAlg::~HelloWorldAlg() {}
@@ -12,14 +13,13 @@ StatusCode HelloWorldAlg::initialize() {
   if (GaudiAlgorithm::initialize().isFailure()) {
     return StatusCode::FAILURE;
   }
-  message = message + "World";
   return StatusCode::SUCCESS;
 }
 
 StatusCode HelloWorldAlg::execute() {
   info() << endmsg;
   info() << endmsg;
-  info() << message << endmsg;  
+  info() << theMessage << endmsg;  
   info() << endmsg;
   info() << endmsg;
   return StatusCode::SUCCESS;
