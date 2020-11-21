@@ -7,8 +7,6 @@ from Configurables import ApplicationMgr
 ApplicationMgr( TopAlg=[producer],
                 EvtSel="NONE",
                 EvtMax=1,                
-#                EvtMax=100,
                 OutputLevel=INFO,
                 )
-
 
