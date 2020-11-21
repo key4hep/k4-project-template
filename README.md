@@ -11,7 +11,7 @@ This repository can be a starting point and template for projects using the Key4
 
 * PODIO
 
-* Gaudi   
+* Gaudi
 
 * k4FWCore
 
