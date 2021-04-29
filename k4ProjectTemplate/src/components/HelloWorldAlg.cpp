@@ -3,9 +3,7 @@
 
 DECLARE_COMPONENT(HelloWorldAlg)
 
-HelloWorldAlg::HelloWorldAlg(const std::string& aName, ISvcLocator* aSvcLoc) : GaudiAlgorithm(aName, aSvcLoc) {
-  declareProperty("PerEventPrintMessage", theMessage, "The message to printed for each Event");
-}
+HelloWorldAlg::HelloWorldAlg(const std::string& aName, ISvcLocator* aSvcLoc) : GaudiAlgorithm(aName, aSvcLoc) { }
 
 HelloWorldAlg::~HelloWorldAlg() {}
 
