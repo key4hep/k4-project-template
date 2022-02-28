@@ -10,6 +10,9 @@
 # This setup requires the use of GNUInstallDirs
 ###############################################################################
 
+configure_file(${CMAKE_CURRENT_LIST_DIR}/package_version_template.h.in
+  ${CMAKE_CURRENT_BINARY_DIR}/include/${CMAKE_PROJECT_NAME}/${CMAKE_PROJECT_NAME}Version.h)
+
 include(CMakePackageConfigHelpers)
 
 configure_package_config_file(
@@ -27,6 +30,9 @@ write_basic_package_version_file(
 install(FILES ${CMAKE_CURRENT_BINARY_DIR}/${CMAKE_PROJECT_NAME}Config.cmake
               ${CMAKE_CURRENT_BINARY_DIR}/${CMAKE_PROJECT_NAME}ConfigVersion.cmake
         DESTINATION ${CMAKE_INSTALL_LIBDIR}/cmake/${CMAKE_PROJECT_NAME} )
+
+install(FILES ${CMAKE_CURRENT_BINARY_DIR}/include/${CMAKE_PROJECT_NAME}/${CMAKE_PROJECT_NAME}Version.h
+  DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/${CMAKE_PROJECT_NAME} )
 
 install(EXPORT ${CMAKE_PROJECT_NAME}Targets
   NAMESPACE ${CMAKE_PROJECT_NAME}::
