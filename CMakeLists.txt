@@ -1,15 +1,17 @@
-CMAKE_MINIMUM_REQUIRED(VERSION 2.8.5)
+CMAKE_MINIMUM_REQUIRED(VERSION 3.12)
 
 
 project(k4ProjectTemplate)
 
+# please keep this layout for version setting, used by the automatic tagging script
+set(PACKAGE_VERSION_MAJOR 1)
+set(PACKAGE_VERSION_MINOR 2)
+set(PACKAGE_VERSION_PATCH 3)
+
+# dependencies are declared like this
 find_package(ROOT COMPONENTS RIO Tree)
 find_package(EDM4HEP)
 find_package(k4FWCore)
-
-#---------------------------------------------------------------
-# Load macros and functions for Gaudi-based projects
-
 find_package(Gaudi)
 #---------------------------------------------------------------
 
@@ -26,3 +28,5 @@ endif()
 include(CTest)
 
 add_subdirectory(k4ProjectTemplate)
+
+include(cmake/CreateProjectConfig.cmake)
