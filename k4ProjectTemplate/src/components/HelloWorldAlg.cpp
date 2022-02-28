@@ -3,7 +3,7 @@
 
 DECLARE_COMPONENT(HelloWorldAlg)
 
-HelloWorldAlg::HelloWorldAlg(const std::string& aName, ISvcLocator* aSvcLoc) : GaudiAlgorithm(aName, aSvcLoc) { }
+HelloWorldAlg::HelloWorldAlg(const std::string& aName, ISvcLocator* aSvcLoc) : GaudiAlgorithm(aName, aSvcLoc) {}
 
 HelloWorldAlg::~HelloWorldAlg() {}
 
@@ -17,12 +17,10 @@ StatusCode HelloWorldAlg::initialize() {
 StatusCode HelloWorldAlg::execute() {
   info() << endmsg;
   info() << endmsg;
-  info() << theMessage << endmsg;  
+  info() << theMessage << endmsg;
   info() << endmsg;
   info() << endmsg;
   return StatusCode::SUCCESS;
 }
 
-StatusCode HelloWorldAlg::finalize() {
-  return GaudiAlgorithm::finalize(); 
-}
+StatusCode HelloWorldAlg::finalize() { return GaudiAlgorithm::finalize(); }

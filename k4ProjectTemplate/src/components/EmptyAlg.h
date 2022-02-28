@@ -1,9 +1,8 @@
-#pragma once 
+#pragma once
 
 // GAUDI
-#include "GaudiAlg/GaudiAlgorithm.h"
 #include "Gaudi/Property.h"
-
+#include "GaudiAlg/GaudiAlgorithm.h"
 
 class EmptyAlg : public GaudiAlgorithm {
 public:
@@ -23,6 +22,6 @@ public:
   virtual StatusCode finalize() final;
 
 private:
-  // member variable 
-  int m_member = 0; 
+  // member variable
+  int m_member = 0;
 };

@@ -5,17 +5,15 @@
 #include "GaudiAlg/GaudiAlgorithm.h"
 
 // edm4hep
-#include "k4FWCore/DataHandle.h"
 #include "TTree.h"
+#include "k4FWCore/DataHandle.h"
 
-
-
-// datamodel 
+// datamodel
 namespace edm4hep {
-class MCParticleCollection;
-class SimTrackerHitCollection;
-class SimCaloHit;
-}
+  class MCParticleCollection;
+  class SimTrackerHitCollection;
+  class SimCaloHit;
+}  // namespace edm4hep
 
 /** @class CreateExampleEventData
  *  Lightweight producer for edm data for tests that do not depend on the actual
@@ -43,14 +41,15 @@ public:
 
 private:
   /// integer to add to the dummy values written to the edm
-  Gaudi::Property<int> m_magicNumberOffset{this, "magicNumberOffset", 0, "Integer to add to the dummy values written to the edm"};
+  Gaudi::Property<int> m_magicNumberOffset{this, "magicNumberOffset", 0,
+                                           "Integer to add to the dummy values written to the edm"};
   /// Handle for the genparticles to be written
   DataHandle<edm4hep::MCParticleCollection> m_mcParticleHandle{"MCParticles", Gaudi::DataHandle::Writer, this};
   /// Handle for the genvertices to be written
   DataHandle<edm4hep::SimTrackerHitCollection> m_simTrackerHitHandle{"SimTrackerHit", Gaudi::DataHandle::Writer, this};
 
-  DataHandle<float> m_singleFloatHandle{"SingleFloat", Gaudi::DataHandle::Writer, this};
+  DataHandle<float>              m_singleFloatHandle{"SingleFloat", Gaudi::DataHandle::Writer, this};
   DataHandle<std::vector<float>> m_vectorFloatHandle{"VectorFloat", Gaudi::DataHandle::Writer, this};
-  DataHandle<int> m_singleIntHandle{"SingleInt", Gaudi::DataHandle::Writer, this};
+  DataHandle<int>                m_singleIntHandle{"SingleInt", Gaudi::DataHandle::Writer, this};
 };
 #endif /* TESTFWCORE_CREATEEXAMPLEEVENTDATA */

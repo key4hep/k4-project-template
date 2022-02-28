@@ -1,12 +1,11 @@
 #ifndef TESTFWCORE_HELLOWORLDALG
 #define TESTFWCORE_HELLOWORLDALG
 
-#pragma once 
+#pragma once
 
 // GAUDI
-#include "GaudiAlg/GaudiAlgorithm.h"
 #include "Gaudi/Property.h"
-
+#include "GaudiAlg/GaudiAlgorithm.h"
 
 class HelloWorldAlg : public GaudiAlgorithm {
 public:
@@ -26,8 +25,9 @@ public:
   virtual StatusCode finalize() final;
 
 private:
-  // member variable 
-  Gaudi::Property<std::string> theMessage{this, "PerEventPrintMessage", "Hello ", "The message to printed for each Event"};
+  // member variable
+  Gaudi::Property<std::string> theMessage{this, "PerEventPrintMessage", "Hello ",
+                                          "The message to printed for each Event"};
 };
 
 #endif /* TESTFWCORE_HELLOWORLDALG */
