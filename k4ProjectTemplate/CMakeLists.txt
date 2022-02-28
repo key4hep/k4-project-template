@@ -7,6 +7,12 @@ gaudi_add_module(k4ProjectTemplatePlugins
                  SOURCES ${_plugin_sources}
                  LINK Gaudi::GaudiKernel Gaudi::GaudiAlgLib k4FWCore::k4FWCore k4FWCore::k4FWCorePlugins  EDM4HEP::edm4hep EDM4HEP::edm4hepDict)
 
+install(TARGETS k4ProjectTemplatePlugins
+  EXPORT ${CMAKE_PROJECT_NAME}Targets
+  RUNTIME DESTINATION "${CMAKE_INSTALL_BINDIR}" COMPONENT bin
+  LIBRARY DESTINATION "${CMAKE_INSTALL_LIBDIR}" COMPONENT shlib
+  PUBLIC_HEADER DESTINATION "${CMAKE_INSTALL_INCLUDEDIR}/@{CMAKE_PROJECT_NAME}"
+  COMPONENT dev)
 
 include(CTest)
 
