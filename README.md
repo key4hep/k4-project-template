@@ -19,6 +19,7 @@ This repository can be a starting point and template for projects using the Key4
 
 
 ```
+source /cvmfs/sw.hsf.org/key4hep/setup.sh
 mkdir build install
 cd build;
 cmake .. -DCMAKE_INSTALL_PREFIX=../install
