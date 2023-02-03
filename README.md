@@ -32,9 +32,9 @@ make install
 
 
 ```
-./run gaudirun.py ../k4TestFWCore/options/createHelloWorld.py 
+k4run ../k4TestFWCore/options/createHelloWorld.py 
 
-./run gaudirun.py ../k4TestFWCore/options/createExampleEventData.py 
+k4run ../k4TestFWCore/options/createExampleEventData.py 
 
 ```
 
