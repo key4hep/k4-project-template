@@ -4,6 +4,8 @@
 // GAUDI
 #include "GaudiAlg/GaudiAlgorithm.h"
 
+#include "podio/UserDataCollection.h"
+
 // edm4hep
 #include "TTree.h"
 #include "k4FWCore/DataHandle.h"
@@ -48,8 +50,6 @@ private:
   /// Handle for the genvertices to be written
   DataHandle<edm4hep::SimTrackerHitCollection> m_simTrackerHitHandle{"SimTrackerHit", Gaudi::DataHandle::Writer, this};
 
-  DataHandle<float>              m_singleFloatHandle{"SingleFloat", Gaudi::DataHandle::Writer, this};
-  DataHandle<std::vector<float>> m_vectorFloatHandle{"VectorFloat", Gaudi::DataHandle::Writer, this};
-  DataHandle<int>                m_singleIntHandle{"SingleInt", Gaudi::DataHandle::Writer, this};
+  DataHandle<podio::UserDataCollection<float>> m_vectorFloatHandle{"VectorFloat", Gaudi::DataHandle::Writer, this};
 };
 #endif /* TESTFWCORE_CREATEEXAMPLEEVENTDATA */

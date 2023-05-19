@@ -22,11 +22,9 @@ StatusCode CreateExampleEventData::initialize() {
 }
 
 StatusCode CreateExampleEventData::execute() {
-  m_singleIntHandle.put(new int(12345));
-
-  std::vector<float>* floatVector = m_vectorFloatHandle.createAndPut();
-  floatVector->emplace_back(125.);
-  floatVector->emplace_back(25.);
+  auto* floatVector = m_vectorFloatHandle.createAndPut();
+  floatVector->push_back(125.);
+  floatVector->push_back(25.);
 
   edm4hep::MCParticleCollection* particles = m_mcParticleHandle.createAndPut();
 
