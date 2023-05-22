@@ -7,7 +7,7 @@ producer.PerEventPrintMessage = "Hello World !"
 from Configurables import ApplicationMgr
 ApplicationMgr( TopAlg=[producer],
                 EvtSel="NONE",
-                EvtMax=1,                
+                EvtMax=1,
                 OutputLevel=INFO,
                 )
 

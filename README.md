@@ -28,18 +28,18 @@ make install
 
 ```
 
-## Execute Examples 
+## Execute Examples
 
 
 ```
-k4run ../k4TestFWCore/options/createHelloWorld.py 
+k4run ../k4TestFWCore/options/createHelloWorld.py
 
-k4run ../k4TestFWCore/options/createExampleEventData.py 
+k4run ../k4TestFWCore/options/createExampleEventData.py
 
 ```
 
 
 ## References:
-These could perhaps be usefule for newcomers. 
+These could perhaps be usefule for newcomers.
 1. [lhcb-98-064 COMP](https://cds.cern.ch/record/691746/files/lhcb-98-064.pdf)
 2. [Hello World in the Gaudi Framework](https://lhcb.github.io/DevelopKit/02a-gaudi-helloworld)

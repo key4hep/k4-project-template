@@ -19,7 +19,7 @@ namespace edm4hep {
  *  Lightweight producer for edm data for tests that do not depend on the actual
  *  data content and therefore do not need the simulation machinery.
  *  Fills data members with increasing integers, together with some offset so that different
- *  events can be easily distinguished. 
+ *  events can be easily distinguished.
  *
  */
 class CreateExampleEventData : public GaudiAlgorithm {
