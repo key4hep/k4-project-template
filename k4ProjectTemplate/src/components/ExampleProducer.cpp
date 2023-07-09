@@ -6,7 +6,8 @@
 
 using BaseClass_t = Gaudi::Functional::Traits::BaseClass_t<Gaudi::Algorithm>;
 
-class ExampleProducer final : Gaudi::Functional::Producer<int(), BaseClass_t> {
+class ExampleProducer final : public Gaudi::Functional::Producer<int(), BaseClass_t> {
+public:
 
   ExampleProducer( const std::string& name, ISvcLocator* svcLoc )
     : Producer( name, svcLoc, KeyValue( "OutputLocation", "/ExampleInt" ) ) {}
@@ -15,7 +16,6 @@ class ExampleProducer final : Gaudi::Functional::Producer<int(), BaseClass_t> {
     return m_exampleInt;
   }
 
-private:
   Gaudi::Property<std::string> m_outputLocation{this, "OutputLocation", "/ExampleInt",
                                                 "Location of the ExampleInt"};
   Gaudi::Property<int> m_exampleInt{this, "ExampleInt", 3,
