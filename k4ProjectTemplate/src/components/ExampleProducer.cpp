@@ -15,8 +15,10 @@ struct ExampleProducer final : Gaudi::Functional::Producer<int(), BaseClass_t> {
     return m_exampleInt;
   }
 
-  Gaudi::Property<std::string> m_outputLocation{this, "OutputLocation", "/ExampleInt"};
-  Gaudi::Property<int> m_exampleInt{this, "ExampleInt", 3};
+  Gaudi::Property<std::string> m_outputLocation{this, "OutputLocation", "/ExampleInt",
+                                                "Location of the ExampleInt"};
+  Gaudi::Property<int> m_exampleInt{this, "ExampleInt", 3,
+                                    "Example int to be produced"};
 
 };
  
