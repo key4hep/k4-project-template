@@ -9,7 +9,7 @@ using BaseClass_t = Gaudi::Functional::Traits::BaseClass_t<Gaudi::Algorithm>;
 struct ExampleProducer final : Gaudi::Functional::Producer<int(), BaseClass_t> {
 
   ExampleProducer( const std::string& name, ISvcLocator* svcLoc )
-    : Producer( name, svcLoc, KeyValue( "OutputLocation", m_outputLocation.c_str() ) ) {}
+    : Producer( name, svcLoc, KeyValue( "OutputLocation", "/ExampleInt" ) ) {}
 
   int operator()() const override {
     return m_exampleInt;
