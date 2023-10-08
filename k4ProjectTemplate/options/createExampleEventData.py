@@ -16,25 +16,23 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-from Gaudi.Configuration import *
-
+from Gaudi.Configuration import INFO
+from Configurables import CreateExampleEventData
+from Configurables import PodioOutput
+from Configurables import ApplicationMgr
 from Configurables import k4DataSvc
+
 podioevent = k4DataSvc("EventDataSvc")
 
-from Configurables import CreateExampleEventData
 producer = CreateExampleEventData()
 
-from Configurables import PodioOutput
 out = PodioOutput("out")
 out.filename = "output_k4test_exampledata.root"
 out.outputCommands = ["keep *"]
 
-from Configurables import ApplicationMgr
-ApplicationMgr( TopAlg=[producer, out],
-                EvtSel="NONE",
-                EvtMax=100,
-                ExtSvc=[podioevent],
-                OutputLevel=INFO,
-                )
-
-
+ApplicationMgr(TopAlg=[producer, out],
+               EvtSel="NONE",
+               EvtMax=100,
+               ExtSvc=[podioevent],
+               OutputLevel=INFO,
+               )

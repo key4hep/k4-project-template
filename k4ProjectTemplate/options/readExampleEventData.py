@@ -16,19 +16,19 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-from Gaudi.Configuration import *
-
+from Gaudi.Configuration import DEBUG
 from Configurables import k4DataSvc
+from Configurables import CreateExampleEventData
+from Configurables import PodioInput
+from Configurables import ApplicationMgr
+
 podioevent = k4DataSvc("EventDataSvc")
 podioevent.input = "output_k4test_exampledata.root"
-from Configurables import CreateExampleEventData
 producer = CreateExampleEventData()
 
-from Configurables import PodioInput
 inp = PodioInput("InputReader")
-inp.collections = ["MCParticles", "SimTrackerHit"]
+inp.collections = ["ExampleParticles"]
 
-from Configurables import ApplicationMgr
 ApplicationMgr( TopAlg=[inp],
                 EvtSel="NONE",
                 EvtMax=100,
