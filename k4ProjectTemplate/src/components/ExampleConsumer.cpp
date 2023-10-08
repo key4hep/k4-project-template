@@ -25,15 +25,11 @@
 
 #include <string>
 
-struct ExampleConsumer final : Gaudi::Functional::Consumer<void( const int& ), BaseClass_t> {
+struct ExampleConsumer final : Gaudi::Functional::Consumer<void(const int&), BaseClass_t> {
+  ExampleConsumer(const std::string& name, ISvcLocator* svcLoc)
+      : Consumer(name, svcLoc, KeyValue("ExampleConsumerInputLocation", "/ExampleInt")) {}
 
-  ExampleConsumer( const std::string& name, ISvcLocator* svcLoc )
-    : Consumer( name, svcLoc, KeyValue( "ExampleConsumerInputLocation", "/ExampleInt" ) ) {}
-
-  void operator()(const int& input) const override {
-    info() << "ExampleInt = " << input << endmsg;
-  }
-
+  void operator()(const int& input) const override { info() << "ExampleInt = " << input << endmsg; }
 };
- 
+
 DECLARE_COMPONENT(ExampleConsumer)

@@ -26,18 +26,15 @@
 #include <string>
 
 struct ExampleProducer final : Gaudi::Functional::Producer<int(), BaseClass_t> {
-
-  ExampleProducer( const std::string& name, ISvcLocator* svcLoc )
-    : Producer( name, svcLoc, KeyValue( "OutputLocation", "/ExampleInt" ) ) {}
+  ExampleProducer(const std::string& name, ISvcLocator* svcLoc)
+      : Producer(name, svcLoc, KeyValue("OutputLocation", "/ExampleInt")) {}
 
   int operator()() const override {
     info() << "Producing ExampleInt = " << m_exampleInt << endmsg;
     return m_exampleInt;
   }
 
-  Gaudi::Property<int> m_exampleInt{this, "ExampleInt", 3,
-                                    "Example int to be produced"};
-
+  Gaudi::Property<int> m_exampleInt{this, "ExampleInt", 3, "Example int to be produced"};
 };
- 
+
 DECLARE_COMPONENT(ExampleProducer)
