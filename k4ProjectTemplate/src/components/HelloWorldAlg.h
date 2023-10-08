@@ -16,36 +16,33 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-#ifndef TESTFWCORE_HELLOWORLDALG
-#define TESTFWCORE_HELLOWORLDALG
 
-#pragma once
+// Note that in most cases it's better to use the functional
+// approach than Gaudi::Algorithm
 
 // GAUDI
 #include "Gaudi/Property.h"
-#include "GaudiAlg/GaudiAlgorithm.h"
+#include "Gaudi/Algorithm.h"
 
-class HelloWorldAlg : public GaudiAlgorithm {
+class HelloWorldAlg : public Gaudi::Algorithm {
 public:
-  explicit HelloWorldAlg(const std::string&, ISvcLocator*);
+  HelloWorldAlg(const std::string&, ISvcLocator*);
   virtual ~HelloWorldAlg();
   /**  Initialize.
    *   @return status code
    */
-  virtual StatusCode initialize() final;
+  StatusCode initialize() override;
   /**  Execute.
    *   @return status code
    */
-  virtual StatusCode execute() final;
+  StatusCode execute(const EventContext&) const override;
   /**  Finalize.
    *   @return status code
    */
-  virtual StatusCode finalize() final;
+  StatusCode finalize() override;
 
 private:
   // member variable
   Gaudi::Property<std::string> theMessage{this, "PerEventPrintMessage", "Hello ",
                                           "The message to printed for each Event"};
 };
-
-#endif /* TESTFWCORE_HELLOWORLDALG */

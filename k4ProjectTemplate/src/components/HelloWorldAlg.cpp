@@ -21,18 +21,18 @@
 
 DECLARE_COMPONENT(HelloWorldAlg)
 
-HelloWorldAlg::HelloWorldAlg(const std::string& aName, ISvcLocator* aSvcLoc) : GaudiAlgorithm(aName, aSvcLoc) {}
+HelloWorldAlg::HelloWorldAlg(const std::string& aName, ISvcLocator* aSvcLoc) : Gaudi::Algorithm(aName, aSvcLoc) {}
 
 HelloWorldAlg::~HelloWorldAlg() {}
 
 StatusCode HelloWorldAlg::initialize() {
-  if (GaudiAlgorithm::initialize().isFailure()) {
+  if (Gaudi::Algorithm::initialize().isFailure()) {
     return StatusCode::FAILURE;
   }
   return StatusCode::SUCCESS;
 }
 
-StatusCode HelloWorldAlg::execute() {
+StatusCode HelloWorldAlg::execute(const EventContext& ctx) const {
   info() << endmsg;
   info() << endmsg;
   info() << theMessage << endmsg;
@@ -41,4 +41,4 @@ StatusCode HelloWorldAlg::execute() {
   return StatusCode::SUCCESS;
 }
 
-StatusCode HelloWorldAlg::finalize() { return GaudiAlgorithm::finalize(); }
+StatusCode HelloWorldAlg::finalize() { return Gaudi::Algorithm::finalize(); }
