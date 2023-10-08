@@ -21,8 +21,8 @@
 // approach than Gaudi::Algorithm
 
 // GAUDI
-#include "Gaudi/Property.h"
 #include "Gaudi/Algorithm.h"
+#include "Gaudi/Property.h"
 
 class HelloWorldAlg : public Gaudi::Algorithm {
 public:
