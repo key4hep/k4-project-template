@@ -30,15 +30,12 @@ struct ExampleTransformer final : Gaudi::Functional::Transformer<int( const int&
   ExampleTransformer( const std::string& name, ISvcLocator* svcLoc )
     : Transformer( name, svcLoc,
                    KeyValue( "ExampleTransformerInputLocation", "/InputExampleInt" ),
-                   {KeyValue( "ExampleTransformerOutputLocation", "/OutputExampleInt")} {}
+                   {KeyValue( "ExampleTransformerOutputLocation", "/OutputExampleInt")}) {}
 
   int operator()(const int& input) const override {
     info() << "ExampleInt = " << input << endmsg;
     return input + 1;
   }
-
-  Gaudi::Property<std::string> m_inputLocation{this, "ExampleConsumerInputLocation", "/ExampleInt",
-                                                "Location of the ExampleInt"};
 
 };
  

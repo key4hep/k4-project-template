@@ -34,9 +34,6 @@ struct ExampleConsumer final : Gaudi::Functional::Consumer<void( const int& ), B
     info() << "ExampleInt = " << input << endmsg;
   }
 
-  Gaudi::Property<std::string> m_inputLocation{this, "ExampleConsumerInputLocation", "/ExampleInt",
-                                                "Location of the ExampleInt"};
-
 };
  
 DECLARE_COMPONENT(ExampleConsumer)
