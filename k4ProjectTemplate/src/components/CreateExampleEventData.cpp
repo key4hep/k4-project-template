@@ -32,7 +32,7 @@ struct CreateExampleEventData final : Gaudi::Functional::Producer<edm4hep::MCPar
       : Producer(name, svcLoc, KeyValue("OutputLocation", "ExampleParticles")) {}
 
   edm4hep::MCParticleCollection operator()() const override {
-    auto coll = edm4hep::MCParticleCollection();
+    auto coll     = edm4hep::MCParticleCollection();
     auto particle = coll.create();
     particle.setMass(m_exampleEnergy);
     info() << "Producing a particle with mass = " << m_exampleEnergy << " GeV" << endmsg;
