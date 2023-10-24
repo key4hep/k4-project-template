@@ -33,14 +33,16 @@ source /cvmfs/sw-nightlies.hsf.org/key4hep/setup.sh
 
 Note that if you source the releases and use the current version of this
 repository this is not guaranteed to work as there could be changes since this
-repository was built for the release. What you can do in this case is to checkout a previous tag, for example:
+repository was built for the release. What you can do in this case is to
+checkout a previous tag, for example:
 
 ``` bash
 git checkout v0.3.0
 ```
 
-With the nightlies this repository should always work; if it doesn't please
-[open an
+This is because the releases are only built with tagged versions of the
+packages. With the nightlies this repository should always work; if it doesn't
+please [open an
 issue](https://github.com/key4hep/k4-project-template/issues/new/choose).
 
 ## Execute Examples
