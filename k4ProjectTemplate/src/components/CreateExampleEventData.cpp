@@ -18,18 +18,15 @@
  */
 
 #include "Gaudi/Property.h"
-#include "GaudiAlg/Producer.h"
-
-// Define BaseClass_t
-#include "k4FWCore/BaseClass.h"
+#include "k4FWCore/Producer.h"
 
 #include "edm4hep/MCParticleCollection.h"
 
 #include <string>
 
-struct CreateExampleEventData final : Gaudi::Functional::Producer<edm4hep::MCParticleCollection(), BaseClass_t> {
+struct CreateExampleEventData final : k4FWCore::Producer<edm4hep::MCParticleCollection()> {
   CreateExampleEventData(const std::string& name, ISvcLocator* svcLoc)
-      : Producer(name, svcLoc, KeyValue("OutputLocation", "ExampleParticles")) {}
+      : Producer(name, svcLoc, {}, KeyValues("OutputLocation", {"ExampleParticles"})) {}
 
   edm4hep::MCParticleCollection operator()() const override {
     auto coll     = edm4hep::MCParticleCollection();

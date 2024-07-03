@@ -17,22 +17,24 @@
  * limitations under the License.
  */
 
-#include "Gaudi/Property.h"
-#include "GaudiAlg/Transformer.h"
-
-// Define BaseClass_t
-#include "k4FWCore/BaseClass.h"
+#include "edm4hep/MCParticleCollection.h"
+#include "k4FWCore/Transformer.h"
 
 #include <string>
 
-struct ExampleTransformer final : Gaudi::Functional::Transformer<int(const int&), BaseClass_t> {
+struct ExampleTransformer final
+    : k4FWCore::Transformer<edm4hep::MCParticleCollection(const edm4hep::MCParticleCollection&)> {
   ExampleTransformer(const std::string& name, ISvcLocator* svcLoc)
-      : Transformer(name, svcLoc, KeyValue("ExampleTransformerInputLocation", "/InputExampleInt"),
-                    {KeyValue("ExampleTransformerOutputLocation", "/OutputExampleInt")}) {}
+      : Transformer(name, svcLoc, {KeyValues("ExampleTransformerInputLocation", {"/InputExampleInt"})},
+                    {KeyValues("ExampleTransformerOutputLocation", {"/OutputExampleInt"})}) {}
 
-  int operator()(const int& input) const override {
+  edm4hep::MCParticleCollection operator()(const edm4hep::MCParticleCollection& input) const override {
     info() << "ExampleInt = " << input << endmsg;
-    return input + 1;
+    auto out = edm4hep::MCParticleCollection();
+    for (const auto& mc : input) {
+      out.push_back(mc);
+    }
+    return out;
   }
 };
 

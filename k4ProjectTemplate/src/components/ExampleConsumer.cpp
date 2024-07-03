@@ -17,19 +17,18 @@
  * limitations under the License.
  */
 
-#include "Gaudi/Property.h"
-#include "GaudiAlg/Consumer.h"
-
-// Define BaseClass_t
-#include "k4FWCore/BaseClass.h"
+#include "edm4hep/MCParticleCollection.h"
+#include "k4FWCore/Consumer.h"
 
 #include <string>
 
-struct ExampleConsumer final : Gaudi::Functional::Consumer<void(const int&), BaseClass_t> {
+struct ExampleConsumer final : k4FWCore::Consumer<void(const edm4hep::MCParticleCollection&)> {
   ExampleConsumer(const std::string& name, ISvcLocator* svcLoc)
-      : Consumer(name, svcLoc, KeyValue("ExampleConsumerInputLocation", "/ExampleInt")) {}
+      : Consumer(name, svcLoc, {KeyValues("ExampleConsumerInputLocation", {"/ExampleInt"})}) {}
 
-  void operator()(const int& input) const override { info() << "ExampleInt = " << input << endmsg; }
+  void operator()(const edm4hep::MCParticleCollection& input) const override {
+    info() << "ExampleInt = " << input << endmsg;
+  }
 };
 
 DECLARE_COMPONENT(ExampleConsumer)
