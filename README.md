@@ -1,7 +1,7 @@
 # k4-project-template
 
 
-This repository can be a starting point and template for projects using the Key4HEP software stack.
+This repository can be a starting point and template for projects using the Key4hep software stack, in particular those writing Gaudi algorithms.
 
 
 ## Dependencies
@@ -16,13 +16,15 @@ This repository can be a starting point and template for projects using the Key4
 
 ## Installation
 
+Run, from the `k4-project-template` directory:
 
 ``` bash
 source /cvmfs/sw.hsf.org/key4hep/setup.sh
-mkdir build install
-cd build;
-cmake .. -DCMAKE_INSTALL_PREFIX=../install
-make install
+k4_local_repo
+mkdir build
+cd build
+cmake .. -DCMAKE_INSTALL_PREFIX=../install -G Ninja
+ninja install
 ```
 
 Alternatively you can source the nightlies instead of the releases:
@@ -48,7 +50,8 @@ issue](https://github.com/key4hep/k4-project-template/issues/new/choose).
 ## Execute Examples
 
 Make sure that `../install/lib` and `../install/python` are in `LD_LIBRARY_PATH`
-and `PYTHONPATH` respectively, by doing:
+and `PYTHONPATH` respectively (`k4_local_repo` should take care of this).
+If they are not, they can be added by running:
 ``` bash
 export LD_LIBRARY_PATH=$PWD/../install/lib:$LD_LIBRARY_PATH
 export PYTHONPATH=$PWD/../install/python:$PYTHONPATH
