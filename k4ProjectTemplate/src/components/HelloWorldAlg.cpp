@@ -32,7 +32,7 @@ StatusCode HelloWorldAlg::initialize() {
   return StatusCode::SUCCESS;
 }
 
-StatusCode HelloWorldAlg::execute(const EventContext& ctx) const {
+StatusCode HelloWorldAlg::execute(const EventContext&) const {
   info() << endmsg;
   info() << endmsg;
   info() << theMessage << endmsg;
