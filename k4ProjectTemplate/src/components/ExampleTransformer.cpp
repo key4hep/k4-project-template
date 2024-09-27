@@ -17,8 +17,9 @@
  * limitations under the License.
  */
 
-#include "edm4hep/MCParticleCollection.h"
 #include "k4FWCore/Transformer.h"
+
+#include "edm4hep/MCParticleCollection.h"
 
 #include <string>
 
@@ -29,12 +30,8 @@ struct ExampleTransformer final
                     {KeyValues("ExampleTransformerOutputLocation", {"/OutputExampleInt"})}) {}
 
   edm4hep::MCParticleCollection operator()(const edm4hep::MCParticleCollection& input) const override {
-    info() << "ExampleInt = " << input << endmsg;
-    auto out = edm4hep::MCParticleCollection();
-    for (const auto& mc : input) {
-      out.push_back(mc);
-    }
-    return out;
+    info() << input << endmsg;
+    return edm4hep::MCParticleCollection();
   }
 };
 
