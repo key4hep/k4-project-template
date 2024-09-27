@@ -17,23 +17,17 @@
 # limitations under the License.
 #
 from Gaudi.Configuration import DEBUG
-from Configurables import k4DataSvc
-from Configurables import CreateExampleEventData
-from Configurables import PodioInput
-from Configurables import ApplicationMgr
+from k4FWCore import ApplicationMgr
+from k4FWCore import IOSvc
 
-podioevent = k4DataSvc("EventDataSvc")
-podioevent.input = "output_k4test_exampledata.root"
-producer = CreateExampleEventData()
+iosvc = IOSvc("IOSvc")
+iosvc.input = "output_k4test_exampledata.root"
 
-inp = PodioInput("InputReader")
-inp.collections = ["ExampleParticles"]
+iosvc.CollectionNames = ["ExampleParticles"]
 
-ApplicationMgr( TopAlg=[inp],
-                EvtSel="NONE",
-                EvtMax=100,
-                ExtSvc=[podioevent],
-                OutputLevel=DEBUG,
-                )
-
-
+ApplicationMgr(TopAlg=[],
+               EvtSel="NONE",
+               EvtMax=100,
+               ExtSvc=[iosvc],
+               OutputLevel=DEBUG,
+               )

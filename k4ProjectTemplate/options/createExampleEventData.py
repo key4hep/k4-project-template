@@ -18,14 +18,13 @@
 #
 from Gaudi.Configuration import INFO
 from Configurables import CreateExampleEventData
-from k4FWCore import ApplicationMgr
-from k4FWCore import IOSvc
+from k4FWCore import ApplicationMgr, IOSvc
 
-iosvc = IOSvc("IOSvc")
-iosvc.output = "output_k4test_exampledata.root"
+iosvc = IOSvc()
+iosvc.Output = "output_k4test_exampledata.root"
 iosvc.outputCommands = ["keep *"]
 
-producer = CreateExampleEventData()
+producer = CreateExampleEventData("CreateExampleEventData")
 
 ApplicationMgr(TopAlg=[producer],
                EvtSel="NONE",
