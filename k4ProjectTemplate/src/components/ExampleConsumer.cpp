@@ -24,11 +24,9 @@
 
 struct ExampleConsumer final : k4FWCore::Consumer<void(const edm4hep::MCParticleCollection&)> {
   ExampleConsumer(const std::string& name, ISvcLocator* svcLoc)
-      : Consumer(name, svcLoc, {KeyValues("ExampleConsumerInputLocation", {"/ExampleInt"})}) {}
+      : Consumer(name, svcLoc, KeyValues("ExampleConsumerInputLocation", {"/ExampleInt"})) {}
 
-  void operator()(const edm4hep::MCParticleCollection& input) const override {
-    info() << "ExampleInt = " << input << endmsg;
-  }
+  void operator()(const edm4hep::MCParticleCollection& input) const override { info() << input << endmsg; }
 };
 
 DECLARE_COMPONENT(ExampleConsumer)
