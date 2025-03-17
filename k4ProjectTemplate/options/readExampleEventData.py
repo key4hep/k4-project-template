@@ -21,7 +21,7 @@ from k4FWCore import ApplicationMgr
 from k4FWCore import IOSvc
 
 iosvc = IOSvc("IOSvc")
-iosvc.input = "output_k4test_exampledata.root"
+iosvc.Input = "output_k4test_exampledata.root"
 
 iosvc.CollectionNames = ["ExampleParticles"]
 
