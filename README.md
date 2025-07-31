@@ -14,7 +14,14 @@ This repository can be a starting point and template for projects using the Key4
 
 * k4FWCore
 
-## Installation
+## This repository as a template
+
+If you belong to the Key4hep organization, then it is possible to use this
+repository as a template for your new project, otherwise you can simply fork it
+and follow the next steps.
+
+
+### Compilation
 
 Run, from the `k4-project-template` directory:
 
@@ -47,7 +54,7 @@ packages. With the nightlies this repository should always work; if it doesn't
 please [open an
 issue](https://github.com/key4hep/k4-project-template/issues/new/choose).
 
-## Execute Examples
+### Execute Examples
 
 Make sure that `../install/lib` and `../install/python` are in `LD_LIBRARY_PATH`
 and `PYTHONPATH` respectively (`k4_local_repo` should take care of this).
@@ -61,6 +68,17 @@ and then run the examples like this:
 ``` bash
 k4run ../k4ProjectTemplate/options/createHelloWorld.py
 k4run ../k4ProjectTemplate/options/createExampleEventData.py
+```
+
+### Changing the name
+
+Typically for a new project we would like to use a different name than
+k4ProjectTemplate. The change of names can be done quickly running these
+commands (change `k4CoolProject` to its name):
+
+``` bash
+mv k4ProjectTemplate k4CoolProject
+
 ```
 
 
