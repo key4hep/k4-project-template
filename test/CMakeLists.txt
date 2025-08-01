@@ -62,8 +62,5 @@ $ENV{PYTHONPATH};\
 "
 )
 get_property(test_names DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR} PROPERTY TESTS)
-set_tests_properties(
-  ${test_names}
-  PROPERTIES ENVIRONMENT "${test_environment}"
-)
+set_tests_properties(${test_names} PROPERTIES ENVIRONMENT "${test_environment}")
 
