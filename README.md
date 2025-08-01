@@ -46,7 +46,7 @@ repository was built for the release. What you can do in this case is to
 checkout a previous tag, for example:
 
 ``` bash
-git checkout v0.3.0
+git checkout v0.5.0
 ```
 
 This is because the releases are only built with tagged versions of the
@@ -56,18 +56,20 @@ issue](https://github.com/key4hep/k4-project-template/issues/new/choose).
 
 ### Execute Examples
 
-Make sure that `../install/lib` and `../install/python` are in `LD_LIBRARY_PATH`
-and `PYTHONPATH` respectively (`k4_local_repo` should take care of this).
-If they are not, they can be added by running:
+Make sure that `k4-project-template/install/lib` and
+`k4-project-template/install/python` are in `LD_LIBRARY_PATH` and `PYTHONPATH`
+respectively (`k4_local_repo` should take care of this). If they are not, they
+can be added by running:
 ``` bash
-export LD_LIBRARY_PATH=$PWD/../install/lib:$LD_LIBRARY_PATH
-export PYTHONPATH=$PWD/../install/python:$PYTHONPATH
+export LD_LIBRARY_PATH=$PWD/install/lib:$LD_LIBRARY_PATH
+export PYTHONPATH=$PWD/install/python:$PYTHONPATH
 ```
+
 and then run the examples like this:
 
 ``` bash
-k4run ../k4ProjectTemplate/options/createHelloWorld.py
-k4run ../k4ProjectTemplate/options/createExampleEventData.py
+k4run k4ProjectTemplate/options/createHelloWorld.py
+k4run k4ProjectTemplate/options/createExampleEventData.py
 ```
 
 ### Changing the name
@@ -78,8 +80,10 @@ commands (change `k4CoolProject` to its name):
 
 ``` bash
 mv k4ProjectTemplate k4CoolProject
-
+git ls-files | xargs sed -i 's/k4ProjectTemplate/k4CoolProject/g'
 ```
+
+After this, your project should be ready to run
 
 
 ## References:
