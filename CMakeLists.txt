@@ -33,14 +33,17 @@ find_package(ROOT COMPONENTS RIO Tree)
 find_package(EDM4HEP)
 find_package(k4FWCore)
 find_package(Gaudi)
-#---------------------------------------------------------------
 
 include(cmake/Key4hepConfig.cmake)
 
 include(GNUInstallDirs)
 
-include(CTest)
-
 add_subdirectory(k4ProjectTemplate)
+
+include(CTest)
+if(BUILD_TESTING)
+  add_subdirectory(test)
+endif()
+
 
 include(cmake/CreateProjectConfig.cmake)

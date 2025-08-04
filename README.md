@@ -14,7 +14,14 @@ This repository can be a starting point and template for projects using the Key4
 
 * k4FWCore
 
-## Installation
+## This repository as a template
+
+If you belong to the Key4hep organization, then it is possible to use this
+repository as a template for your new project, otherwise you can simply fork it
+and follow the next steps.
+
+
+### Compilation
 
 Run, from the `k4-project-template` directory:
 
@@ -39,7 +46,7 @@ repository was built for the release. What you can do in this case is to
 checkout a previous tag, for example:
 
 ``` bash
-git checkout v0.3.0
+git checkout v0.5.0
 ```
 
 This is because the releases are only built with tagged versions of the
@@ -47,21 +54,36 @@ packages. With the nightlies this repository should always work; if it doesn't
 please [open an
 issue](https://github.com/key4hep/k4-project-template/issues/new/choose).
 
-## Execute Examples
+### Execute Examples
 
-Make sure that `../install/lib` and `../install/python` are in `LD_LIBRARY_PATH`
-and `PYTHONPATH` respectively (`k4_local_repo` should take care of this).
-If they are not, they can be added by running:
+Make sure that `k4-project-template/install/lib` and
+`k4-project-template/install/python` are in `LD_LIBRARY_PATH` and `PYTHONPATH`
+respectively (`k4_local_repo` should take care of this). If they are not, they
+can be added by running:
 ``` bash
-export LD_LIBRARY_PATH=$PWD/../install/lib:$LD_LIBRARY_PATH
-export PYTHONPATH=$PWD/../install/python:$PYTHONPATH
+export LD_LIBRARY_PATH=$PWD/install/lib:$LD_LIBRARY_PATH
+export PYTHONPATH=$PWD/install/python:$PYTHONPATH
 ```
+
 and then run the examples like this:
 
 ``` bash
-k4run ../k4ProjectTemplate/options/createHelloWorld.py
-k4run ../k4ProjectTemplate/options/createExampleEventData.py
+k4run k4ProjectTemplate/options/createHelloWorld.py
+k4run k4ProjectTemplate/options/createExampleEventData.py
 ```
+
+### Changing the name
+
+Typically for a new project we would like to use a different name than
+k4ProjectTemplate. The change of names can be done quickly running these
+commands (change `k4CoolProject` to its name):
+
+``` bash
+mv k4ProjectTemplate k4CoolProject
+git ls-files | xargs sed -i 's/k4ProjectTemplate/k4CoolProject/g'
+```
+
+After this, your project should be ready to run
 
 
 ## References:
