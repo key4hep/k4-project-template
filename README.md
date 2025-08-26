@@ -85,6 +85,16 @@ git ls-files | xargs sed -i 's/k4ProjectTemplate/k4CoolProject/g'
 
 After this, your project should be ready to run
 
+### Continuous integration (CI) in forks
+GitHub disables workflows by default in forks of foreign repositories. Workflows
+can be enabled by going to the Actions tab and clicking the green button labeled
+`I understand my workflows, go ahead and enable them`. If this is not done, no
+workflows will run, for example, after making a pull request. In addition,
+scheduled workflows are also disabled by default and require an additional step
+to be enabled manually from the Actions tab. The workflows that are disabled
+will have `disabled` next to them (at the time of writing, the only one is the
+`Key4hep build`).
+
 
 ## References:
 These could perhaps be usefule for newcomers.
