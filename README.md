@@ -2,6 +2,7 @@
 
 
 This repository can be a starting point and template for projects using the Key4hep software stack, in particular those writing Gaudi algorithms.
+To use it, instead of forking it, go to Github and click `Use this template` at the top right.
 
 
 ## Dependencies
@@ -86,14 +87,15 @@ git ls-files | xargs sed -i 's/k4ProjectTemplate/k4CoolProject/g'
 After this, your project should be ready to run
 
 ### Continuous integration (CI) in forks
-GitHub disables workflows by default in forks of foreign repositories. Workflows
-can be enabled by going to the Actions tab and clicking the green button labeled
-`I understand my workflows, go ahead and enable them`. If this is not done, no
-workflows will run, for example, after making a pull request. In addition,
-scheduled workflows are also disabled by default and require an additional step
-to be enabled manually from the Actions tab. The workflows that are disabled
-will have `disabled` next to them (at the time of writing, the only one is the
-`Key4hep build`).
+If this repository is forked instead of used as a template, CI will not work by
+default, because GitHub disables workflows by default in forks of foreign
+repositories. Workflows can be enabled by going to the Actions tab and clicking
+the green button labeled `I understand my workflows, go ahead and enable them`.
+If this is not done, no workflows will run, for example, after making a pull
+request. In addition, scheduled workflows are also disabled by default and
+require an additional step to be enabled manually from the Actions tab. The
+workflows that are disabled will have `disabled` next to them (at the time of
+writing, the only one is the `Key4hep build`).
 
 
 ## References:
