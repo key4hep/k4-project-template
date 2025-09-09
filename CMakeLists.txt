@@ -19,7 +19,7 @@ limitations under the License.
 CMAKE_MINIMUM_REQUIRED(VERSION 3.12)
 
 
-project(k4ProjectTemplate)
+project(k4ProjectTemplate LANGUAGES CXX)
 
 # please keep this layout for version setting, used by the automatic tagging script
 set(PACKAGE_VERSION_MAJOR 1)
@@ -33,14 +33,17 @@ find_package(Gaudi)
 find_package(ROOT COMPONENTS RIO Tree)
 find_package(EDM4HEP)
 find_package(k4FWCore)
-#---------------------------------------------------------------
 
 include(cmake/Key4hepConfig.cmake)
 
 include(GNUInstallDirs)
 
-include(CTest)
-
 add_subdirectory(k4ProjectTemplate)
+
+include(CTest)
+if(BUILD_TESTING)
+  add_subdirectory(test)
+endif()
+
 
 include(cmake/CreateProjectConfig.cmake)
