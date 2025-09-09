@@ -29,10 +29,10 @@ set(PACKAGE_VERSION_PATCH 3)
 set(PACKAGE_VERSION "${PACKAGE_VERSION_MAJOR}.${PACKAGE_VERSION_MINOR}.${PACKAGE_VERSION_PATCH}")
 
 # dependencies are declared like this
+find_package(Gaudi)
 find_package(ROOT COMPONENTS RIO Tree)
 find_package(EDM4HEP)
 find_package(k4FWCore)
-find_package(Gaudi)
 
 include(cmake/Key4hepConfig.cmake)
 
