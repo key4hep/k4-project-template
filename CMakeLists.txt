@@ -24,7 +24,7 @@ project(k4ProjectTemplate LANGUAGES CXX)
 # please keep this layout for version setting, used by the automatic tagging script
 set(PACKAGE_VERSION_MAJOR 0)
 set(PACKAGE_VERSION_MINOR 7)
-set(PACKAGE_VERSION_PATCH 0)
+set(PACKAGE_VERSION_PATCH 1)
 
 set(PACKAGE_VERSION "${PACKAGE_VERSION_MAJOR}.${PACKAGE_VERSION_MINOR}.${PACKAGE_VERSION_PATCH}")
 
