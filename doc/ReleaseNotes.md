@@ -1,3 +1,11 @@
+# v00.07.01
+
+* 2026-08-03 Victor Schwan ([PR#33](https://github.com/key4hep/k4-project-template/pull/33))
+  - Format Python files and README
+
+* 2026-07-30 Juan Miguel Carceller ([PR#32](https://github.com/key4hep/k4-project-template/pull/32))
+  - Set `GAUDI_PLUGIN_PATH` in tests; Gaudi will prefer that and it seems to fix some obscure bugs in CI when using LCG stacks sometimes.
+
 # v00.07.00
 
 * 2025-09-09 Thomas Madlener ([PR#26](https://github.com/key4hep/k4-project-template/pull/26))
