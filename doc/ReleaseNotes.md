@@ -1,3 +1,8 @@
+# v00.07.02
+
+* 2026-11-03 Thomas Madlener ([PR#34](https://github.com/key4hep/k4-project-template/pull/34))
+  - Make sure to initialize the install directories before setting RPATH
+
 # v00.07.01
 
 * 2026-08-03 Victor Schwan ([PR#33](https://github.com/key4hep/k4-project-template/pull/33))
